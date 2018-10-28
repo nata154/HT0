@@ -8,6 +8,7 @@ import com.training.epam.Prj01.entity.Lamp;
 import com.training.epam.Prj01.entity.Room;
 import com.training.epam.Prj01.entity.RoomMaker;
 import com.training.epam.Prj01.exception.IlluminanceTooMuchException;
+import com.training.epam.Prj01.exception.SpaceUsageTooMuchException;
 
 public class MainApp {
 
@@ -20,7 +21,7 @@ public class MainApp {
 		Room room1 = new Room("Room 1", 100, 3);
 		Lamp lamp1_1 = new Lamp("Lamp 1", 400);
 		Lamp lamp2_1 = new Lamp("Lamp 2", 800);
-		Furniture furniture1_1 = new Furniture("Sofa", 20);
+		Furniture furniture1_1 = new Furniture("Sofa", 60);
 		Furniture furniture2_1 = new Furniture("Wardrobe", 30);
 
 			roomMaker1.addPart(room1);
@@ -34,6 +35,12 @@ public class MainApp {
 			try {
 				roomMaker1.checkIlluminance(roomMaker1);
 		} catch (IlluminanceTooMuchException ex) {
+			ex.printStackTrace();
+		}
+			
+			try {
+				roomMaker1.checkSpaceUsage(roomMaker1);
+		} catch (SpaceUsageTooMuchException ex) {
 			ex.printStackTrace();
 		}
 		
