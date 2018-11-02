@@ -10,7 +10,7 @@ public class Furniture extends PartOfTheBuilding {
 	}
 
 	public Furniture(String name, int square) {
-		super();
+		this.name = name;
 		this.squareFurniture = square;
 	}
 

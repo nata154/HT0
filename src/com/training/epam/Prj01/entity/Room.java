@@ -2,6 +2,7 @@ package com.training.epam.Prj01.entity;
 
 public class Room extends PartOfTheBuilding{
 	
+	private String name;
 	private int square;
 	private int numWindow;
 		
@@ -10,17 +11,25 @@ public class Room extends PartOfTheBuilding{
 	}
 
 	public Room(String name, int square, int numWindow) {
-		super();
+		super(name);
 		this.square = square;
 		this.numWindow = numWindow;
 	}
-
+	
 	public int getSquare() {
 		return square;
 	}
 
 	public void setSquare(int square) {
 		this.square = square;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getNumWindow() {
