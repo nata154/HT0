@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 public class CatalWorker {
 
 	Queue<File> fileTree = new PriorityQueue<File>();
@@ -18,6 +22,8 @@ public class CatalWorker {
 	Queue<File> listOfFiles = new PriorityQueue<File>();
 	Song song = new Song();
 	List<Song> songMP3 = new ArrayList<Song>();
+	
+	private final Logger logger = LogManager.ge;
 
 	public void doFolderExist(File folder) {
 		if (folder.exists()) {
@@ -83,13 +89,13 @@ public class CatalWorker {
 		return songMP3;
 	}
 	
-	
+	//doesn't work
 	public List<Song> listEqualCount(List<Song> songMP3) {
 		List<Song> listEqCount = new ArrayList<Song>();
 		String name = "";
 		for (Song entry: songMP3) {
 			name = entry.getNameSong();
-			if (entry.getNameSong().equals(name)) {
+			if (entry.getNameSong().equals(name)) {   //?
 				listEqCount.add(entry);
 		}
 	}
